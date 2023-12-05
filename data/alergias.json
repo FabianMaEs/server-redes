@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Polen",
+    "descripcion": "Alergia al polen de las plantas",
+    "id_paciente": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Lactosa",
+    "descripcion": "Alergia a la lactosa presente en los productos lácteos",
+    "id_paciente": 2
+  },
+  {
+    "id": 3,
+    "nombre": "Polvo",
+    "descripcion": "Alergia al polvo y ácaros",
+    "id_paciente": 3
+  }
+]

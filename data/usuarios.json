@@ -1,0 +1,142 @@
+[
+  {
+    "id": 0,
+    "nombre": "Juan",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "prueba@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 1,
+    "nombre": "Fabian",
+    "apellido_p": "macias",
+    "apellido_m": "esparza",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "fabmac865@gmail.com",
+    "contrasena": "fabian"
+  },
+  {
+    "id": 2,
+    "nombre": "pedro",
+    "apellido_p": "lopez",
+    "apellido_m": "lopez",
+    "direccion": "aqui",
+    "telefono": "497283728",
+    "correo": "aajkdsd@jfdk.com",
+    "contrasena": "hola"
+  },
+  {
+    "id": 3,
+    "nombre": "Juana",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "pruebas@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 4,
+    "nombre": "Juana",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "pruebas@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 5,
+    "nombre": "Juana",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "pruebas@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 6,
+    "nombre": "Juana",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "pruebas@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 7,
+    "nombre": "Juana",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "pruebas@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 8,
+    "nombre": "Juana",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "pruebas@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 9,
+    "nombre": "Juana",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "pruebas@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 10,
+    "nombre": "Juana",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "pruebas@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 11,
+    "nombre": "Juana",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "pruebas@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 12,
+    "nombre": "Juandsfa",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "prueba@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  },
+  {
+    "id": 13,
+    "nombre": "Juandsfa",
+    "apellido_p": "Perez",
+    "apellido_m": "Gomez",
+    "direccion": "Calle Ejemplo 123",
+    "telefono": "1234567890",
+    "correo": "prueba@ejemplo.com",
+    "contrasena": "contrasenaPrueba"
+  }
+]
