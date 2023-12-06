@@ -12,14 +12,14 @@ app.post('/registro', async (req, res) => {
     const datosRecibidos = req.body;
     console.log('Datos recibidos:', datosRecibidos);
 
-    const datosAntiguos = await fsPromises.readFile('data/usuarios.json', 'utf-8');
+    const datosAntiguos = await fsPromises.readFile('data1/usuarios.json', 'utf-8');
     const usuarios = JSON.parse(datosAntiguos);
 
     usuarios.push(datosRecibidos);
 
-    await fsPromises.writeFile('data/usuarios.json', JSON.stringify(usuarios, null, 2), 'utf-8');
+    await fsPromises.writeFile('data1/usuarios.json', JSON.stringify(usuarios, null, 2), 'utf-8');
     
-    const datosPacientes = await fsPromises.readFile('data/pacientes.json', 'utf-8');
+    const datosPacientes = await fsPromises.readFile('data1/pacientes.json', 'utf-8');
 
     const pacientes = JSON.parse(datosPacientes);
     let idUltimoPaciente = 0;
@@ -34,7 +34,7 @@ app.post('/registro', async (req, res) => {
     }
 
     pacientes.push({ id: idUltimoPaciente + 1, id_usuario: datosRecibidos.id });
-    await fsPromises.writeFile('data/pacientes.json', JSON.stringify(pacientes, null, 2), 'utf-8');
+    await fsPromises.writeFile('data1/pacientes.json', JSON.stringify(pacientes, null, 2), 'utf-8');
 
     console.log('Datos guardados correctamente en pacientes.');
 
@@ -47,7 +47,7 @@ app.post('/registro', async (req, res) => {
 
 app.get('/registro/idUltimoRegistro', async (req, res) => {
   try {
-    const datos = await fsPromises.readFile('data/usuarios.json', 'utf8');
+    const datos = await fsPromises.readFile('data1/usuarios.json', 'utf8');
     const usuarios = JSON.parse(datos);
 
     if (usuarios.length > 0) {
@@ -67,7 +67,7 @@ app.get('/administradores/:idUsuario', (req, res) => {
   const idUsuario = parseInt(req.params.idUsuario);
 
   // Lógica para verificar si el usuario es administrador
-  const administradores = JSON.parse(fs.readFileSync('data/administradores.json', 'utf8'));
+  const administradores = JSON.parse(fs.readFileSync('data1/administradores.json', 'utf8'));
   const esAdministrador = administradores.some(admin => admin.id_usuario === idUsuario);
   console.log('idUsuario: ', idUsuario);
   console.log('administradores: ', administradores);
@@ -77,8 +77,8 @@ app.get('/administradores/:idUsuario', (req, res) => {
 });
 
 app.get('/doctores', (req, res) => {
-  const usuarios = JSON.parse(fs.readFileSync('data/usuarios.json', 'utf8'));
-  const doctores = JSON.parse(fs.readFileSync('data/doctores.json', 'utf8'));
+  const usuarios = JSON.parse(fs.readFileSync('data1/usuarios.json', 'utf8'));
+  const doctores = JSON.parse(fs.readFileSync('data2/doctores.json', 'utf8'));
   
   const doctoresConUsuarios = doctores.map(doctor => {
     const usuarioAsociado = usuarios.find(usuario => usuario.id === doctor.id_usuario);
@@ -98,7 +98,7 @@ app.get('/doctores/:idUsuario', (req, res) => {
   const idUsuario = parseInt(req.params.idUsuario);
 
   // Lógica para verificar si el usuario es doctor
-  const doctores = JSON.parse(fs.readFileSync('data/doctores.json', 'utf8'));
+  const doctores = JSON.parse(fs.readFileSync('data2/doctores.json', 'utf8'));
   const esDoctor = doctores.some(admin => admin.id_usuario === idUsuario);
 
   console.log('idUsuario: ', idUsuario);
@@ -110,14 +110,14 @@ app.get('/doctores/:idUsuario', (req, res) => {
 
 
 app.get('/registros', async (req, res) => {
-    const datos = await fsPromises.readFile('data/usuarios.json', 'utf8');
+    const datos = await fsPromises.readFile('data1/usuarios.json', 'utf8');
     const registros = JSON.parse(datos);
     res.json(registros);
 });
 
 app.get('/pacientes', (req, res) => {
-  const usuarios = JSON.parse(fs.readFileSync('data/usuarios.json', 'utf8'));
-  const pacientes = JSON.parse(fs.readFileSync('data/pacientes.json', 'utf8'));
+  const usuarios = JSON.parse(fs.readFileSync('data1/usuarios.json', 'utf8'));
+  const pacientes = JSON.parse(fs.readFileSync('data1/pacientes.json', 'utf8'));
   
   const pacientesConUsuarios = pacientes.map(doctor => {
     const usuarioAsociado = usuarios.find(usuario => usuario.id === doctor.id_usuario);
@@ -134,7 +134,7 @@ app.get('/pacientes', (req, res) => {
 });
 
 app.get('/alergias', async (req, res) => {
-  const datos = await fsPromises.readFile('data/alergias.json', 'utf8');
+  const datos = await fsPromises.readFile('data1/alergias.json', 'utf8');
   const alergias = JSON.parse(datos);
   res.json(alergias);
 });
