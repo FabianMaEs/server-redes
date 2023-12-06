@@ -100,7 +100,7 @@ app.get('/doctores/:idUsuario', (req, res) => {
   // Lógica para verificar si el usuario es doctor
   const doctores = JSON.parse(fs.readFileSync('data2/doctores.json', 'utf8'));
   const esDoctor = doctores.some(admin => admin.id_usuario === idUsuario);
-  
+
   console.log('idUsuario: ', idUsuario);
   console.log('doctores: ', doctores);
   console.log('esDoctor: ', esDoctor);
@@ -119,17 +119,17 @@ app.get('/pacientes', (req, res) => {
   const usuarios = JSON.parse(fs.readFileSync('data1/usuarios.json', 'utf8'));
   const pacientes = JSON.parse(fs.readFileSync('data1/pacientes.json', 'utf8'));
   
-  const pacientesConUsuarios = pacientes.map(doctor => {
-    const usuarioAsociado = usuarios.find(usuario => usuario.id === doctor.id_usuario);
+  const pacientesConUsuarios = pacientes.map(paciente => {
+    const usuarioAsociado = usuarios.find(usuario => usuario.id === paciente.id_usuario);
   
     if (usuarioAsociado) {
-      return { ...usuarioAsociado, doctor };
+      return { ...usuarioAsociado, paciente };
     }
-  
-    return { error: 'Usuario no encontrado', doctor }; // Devuelve un objeto indicando que no se encontró el usuario
+    
+    return { error: 'Usuario no encontrado', paciente }; // Devuelve un objeto indicando que no se encontró el usuario
   });
   
-  console.log(pacientesConUsuarios);
+  //console.log(pacientesConUsuarios);
   res.json(pacientesConUsuarios);
 });
 
@@ -137,6 +137,27 @@ app.get('/alergias', async (req, res) => {
   const datos = await fsPromises.readFile('data1/alergias.json', 'utf8');
   const alergias = JSON.parse(datos);
   res.json(alergias);
+});
+
+app.post('/registrarAlergia', async (req, res) => {
+  try {
+    const datosRecibidos = req.body;
+    console.log('Datos recibidos:', datosRecibidos);
+
+    const datosAntiguos = await fsPromises.readFile('data1/alergias.json', 'utf-8');
+    const alergias = JSON.parse(datosAntiguos);
+
+    alergias.push(datosRecibidos);
+
+    await fsPromises.writeFile('data1/alergias.json', JSON.stringify(alergias, null, 2), 'utf-8');
+    
+    console.log('Datos guardados correctamente en alergias.');
+
+    res.status(200).send('Datos recibidos y guardados correctamente.');
+  } catch (error) {
+    console.error('Error al procesar la solicitud:', error);
+    res.status(500).send('Error interno del servidor.');
+  }
 });
 
 app.listen(puerto, () => {

@@ -15,6 +15,36 @@
     "id": 3,
     "nombre": "Polvo",
     "descripcion": "Alergia al polvo y ácaros",
-    "id_paciente": 3
+    "id_paciente": 13
+  },
+  {
+    "id": 4,
+    "id_paciente": 12,
+    "nombre": "Polen",
+    "descripcion": "Polen de las plantas"
+  },
+  {
+    "id": 5,
+    "id_paciente": 12,
+    "nombre": "Polen",
+    "descripcion": "Polen de las plantas"
+  },
+  {
+    "id": 6,
+    "nombre": "Polen",
+    "descripcion": "Polen",
+    "id_paciente": 2
+  },
+  {
+    "id": 7,
+    "nombre": "Polen",
+    "descripcion": "Polen",
+    "id_paciente": 2
+  },
+  {
+    "id": 8,
+    "nombre": "Lactosa",
+    "descripcion": "Lactosa",
+    "id_paciente": 6
   }
 ]
