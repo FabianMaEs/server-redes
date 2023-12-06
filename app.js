@@ -139,6 +139,51 @@ app.get('/alergias', async (req, res) => {
   res.json(alergias);
 });
 
+app.get('/citas', async (req, res) => {
+  try {
+    const idUsuario = req.query.idUsuario;
+    console.log('ID de Usuario:', idUsuario);
+
+    // Leer el archivo de pacientes
+    const datosPacientes = await fsPromises.readFile('data1/pacientes.json', 'utf-8');
+    const pacientes = JSON.parse(datosPacientes);
+
+    // Leer el archivo de doctores
+    const datosDoctores = await fsPromises.readFile('data2/doctores.json', 'utf-8');
+    const doctores = JSON.parse(datosDoctores);
+
+    // Leer el archivo de citas
+    const datosCitas = await fsPromises.readFile('data2/citas.json', 'utf-8');
+    const todasLasCitasDetalladas = JSON.parse(datosCitas);
+
+    // Encontrar el usuario correspondiente al idUsuario
+    const paciente = pacientes.find(p => p.id_usuario == idUsuario);
+    const doctor = doctores.find(d => d.id_usuario == idUsuario);
+
+    if (paciente) {
+      // Filtrar citas basadas en el ID del paciente
+      const citasUsuario = todasLasCitasDetalladas.filter(cita => cita.id_paciente == paciente.id);
+
+      console.log('Citas para el Paciente:', citasUsuario);
+
+      res.json(citasUsuario);
+    } else if (doctor) {
+      // Filtrar citas basadas en el ID del doctor
+      const citasUsuario = todasLasCitasDetalladas.filter(cita => cita.id_doctor == doctor.id);
+
+      console.log('Citas para el Doctor:', citasUsuario);
+
+      res.json(citasUsuario);
+    } else {
+      console.log('Usuario no encontrado o no es paciente ni doctor');
+      res.status(404).json({ error: 'Usuario no encontrado o no es paciente ni doctor' });
+    }
+  } catch (error) {
+    console.error('Error al obtener citas:', error);
+    res.status(500).json({ error: 'Error interno del servidor al obtener citas', details: error.message });
+  }
+});
+
 app.post('/registrarAlergia', async (req, res) => {
   try {
     const datosRecibidos = req.body;

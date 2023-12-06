@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "id_paciente": 0,
+        "id_doctor": 1,
+        "hora": "13:00",
+        "fecha": "27/12/2023",
+        "estado": "P"
+    },
+    {
+        "id": 2,
+        "id_paciente": 1,
+        "id_doctor": 1,
+        "hora": "19:00",
+        "fecha": "05/12/2023",
+        "estado": "A"
+    }
+]
