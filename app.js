@@ -100,7 +100,7 @@ app.get('/doctores/:idUsuario', (req, res) => {
   // Lógica para verificar si el usuario es doctor
   const doctores = JSON.parse(fs.readFileSync('data2/doctores.json', 'utf8'));
   const esDoctor = doctores.some(admin => admin.id_usuario === idUsuario);
-
+  
   console.log('idUsuario: ', idUsuario);
   console.log('doctores: ', doctores);
   console.log('esDoctor: ', esDoctor);
