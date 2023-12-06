@@ -26,8 +26,8 @@
     "apellido_m": "lopez",
     "direccion": "aqui",
     "telefono": "497283728",
-    "correo": "aajkdsd@jfdk.com",
-    "contrasena": "hola"
+    "correo": "pruebaDoc@ejemplo.com",
+    "contrasena": "1234"
   },
   {
     "id": 3,
@@ -126,8 +126,8 @@
     "apellido_m": "Gomez",
     "direccion": "Calle Ejemplo 123",
     "telefono": "1234567890",
-    "correo": "prueba@ejemplo.com",
-    "contrasena": "contrasenaPrueba"
+    "correo": "prueba1@ejemplo.com",
+    "contrasena": "1234"
   },
   {
     "id": 13,
@@ -136,7 +136,7 @@
     "apellido_m": "Gomez",
     "direccion": "Calle Ejemplo 123",
     "telefono": "1234567890",
-    "correo": "prueba@ejemplo.com",
-    "contrasena": "contrasenaPrueba"
+    "correo": "prueba2@ejemplo.com",
+    "contrasena": "1234"
   }
 ]
